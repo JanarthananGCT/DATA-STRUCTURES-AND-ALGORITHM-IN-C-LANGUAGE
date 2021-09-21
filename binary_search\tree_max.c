@@ -92,21 +92,25 @@ struct node *deleteNode(struct node *root, int key) {
 
 // Driver code
 int main() {
+    int s,i,a,b;
   struct node *root = NULL;
-  root = insert(root, 8);
-  root = insert(root, 3);
-  root = insert(root, 1);
-  root = insert(root, 6);
-  root = insert(root, 7);
-  root = insert(root, 10);
-  root = insert(root, 14);
-  root = insert(root, 4);
+  printf("Enter array size:");
+  scanf("%d",&s);
+  printf("Enter datas");
+  for(i=0;i<s+1;i++){
+    scanf("%d",&a);
+    root = insert(root, a);
+    i++;
+      
+  }
+  
 
   printf("Inorder traversal: ");
   inorder(root);
-
-  printf("\nAfter deleting 10\n");
-  root = deleteNode(root, 10);
+  printf("which element want to delete??");
+  scanf("%d",&b);
+  printf("\nAfter deleting %d\n",b);
+  root = deleteNode(root, b);
   printf("Inorder traversal: ");
   inorder(root);
 }

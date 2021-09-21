@@ -67,16 +67,22 @@ void printArray(int array[], int size) {
 
 // main function
 int main() {
-  int data[] = {8, 7, 2, 1, 0, 9, 6};
+  int data[3],i,len;
+  printf("Enter number of ellements:");
+  scanf("%d",&len);
+  printf("Enter data:");
+  for(i=0;i<len;i++){
+    scanf("%d",&data[i]);
+  }
   
   int n = sizeof(data) / sizeof(data[0]);
   
   printf("Unsorted Array\n");
-  printArray(data, n);
+  printArray(data, len);
   
   // perform quicksort on data
-  quickSort(data, 0, n - 1);
+  quickSort(data, 0, len - 1);
   
   printf("Sorted array in ascending order: \n");
-  printArray(data, n);
+  printArray(data, len);
 }
